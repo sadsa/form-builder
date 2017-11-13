@@ -1,22 +1,23 @@
-// @flow
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import DynamicForm from './components/dynamicForm/dynamicForm';
+import './app.css';
 
 class App extends Component {
-  test: number = 12;
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div className="app">
+        <div className="container">
+          <div className="row">
+            <div className="col">
+              <DynamicForm onSubmit={this.submit}></DynamicForm>
+            </div>
+          </div>
+        </div>
       </div>
     );
+  }
+  submit = (values) => {
+    console.log(values);
   }
 }
 
